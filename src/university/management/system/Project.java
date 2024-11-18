@@ -6,6 +6,7 @@ import javax.swing.*;
 public class Project extends JFrame implements ActionListener {
     Project() {
         setSize(1540, 850);
+        
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/third.jpg"));
         Image i2 = i1.getImage().getScaledInstance(1500, 750, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
@@ -85,6 +86,7 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem entermarks = new JMenuItem("Enter Marks");
         entermarks.setBackground(Color.WHITE);
+        entermarks.addActionListener(this);
         exam.add(entermarks);
 
         // Update Details menu
@@ -189,6 +191,10 @@ public class Project extends JFrame implements ActionListener {
         }
          else if(msg.equals("Update Faculty Details")){
           new  UpdateTeacher();  
+        }
+        
+        else if(msg.equals("Enter Marks")){
+          new  EnterMarks();  
         }
     }
 
